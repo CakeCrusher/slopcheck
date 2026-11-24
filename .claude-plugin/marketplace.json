@@ -1,0 +1,15 @@
+{
+  "name": "slopcheck",
+  "description": "A free slop score for social posts, for agents that write or schedule them",
+  "owner": {
+    "name": "SlopCheck",
+    "url": "https://slopcheck.io"
+  },
+  "plugins": [
+    {
+      "name": "slopcheck",
+      "source": "./plugins/slopcheck",
+      "description": "Score a draft post for slop before it is posted or scheduled. Free, no API key."
+    }
+  ]
+}

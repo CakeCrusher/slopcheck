@@ -1,0 +1,11 @@
+{
+  "name": "slopcheck",
+  "description": "Score a draft post for slop before it is posted or scheduled. Free, no API key.",
+  "version": "0.1.0",
+  "author": {
+    "name": "SlopCheck",
+    "url": "https://slopcheck.io"
+  },
+  "homepage": "https://slopcheck.io/developers",
+  "license": "MIT"
+}
