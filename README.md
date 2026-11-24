@@ -28,7 +28,7 @@ what is left. The full reference is at [slopcheck.io/developers](https://slopche
 **MCP server** ([`mcp/`](mcp)): lets an agent check a draft before it posts. In Claude Code:
 
 ```
-claude mcp add slopcheck -- npx -y slopcheck-mcp
+claude mcp add slopcheck -- npx -y github:CakeCrusher/slopcheck
 ```
 
 **Agent skill** ([`plugins/slopcheck`](plugins/slopcheck)): the same check as a skill, with no server to run. In Claude Code:

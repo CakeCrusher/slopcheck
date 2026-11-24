@@ -1,0 +1,21 @@
+{
+  "name": "slopcheck-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for SlopCheck: lets an AI agent check an X post for slop before it posts. Free, no API key needed.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "slopcheck-mcp": "./mcp/index.js"
+  },
+  "files": [
+    "mcp/index.js",
+    "mcp/package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "homepage": "https://slopcheck.io/developers",
+  "repository": "github:CakeCrusher/slopcheck"
+}

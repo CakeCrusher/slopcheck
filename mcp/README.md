@@ -10,13 +10,13 @@ Scores are free and need no API key.
 Claude Code:
 
 ```
-claude mcp add slopcheck -- npx -y slopcheck-mcp
+claude mcp add slopcheck -- npx -y github:CakeCrusher/slopcheck
 ```
 
 Cursor, Claude Desktop and other clients, in the MCP config:
 
 ```json
-{ "mcpServers": { "slopcheck": { "command": "npx", "args": ["-y", "slopcheck-mcp"] } } }
+{ "mcpServers": { "slopcheck": { "command": "npx", "args": ["-y", "github:CakeCrusher/slopcheck"] } } }
 ```
 
 ## Tools
