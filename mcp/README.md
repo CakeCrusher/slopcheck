@@ -31,7 +31,7 @@ Cursor, Claude Desktop and other clients, in the MCP config:
 
 ## Limits
 
-Without a key, checks count against SlopCheck's free daily limit for your IP address. Post text is sent to slopcheck.io to be scored and is not stored.
+Without a key the server uses SlopCheck's free API: 50 checks a day per IP address. Post text is sent to slopcheck.io to be scored and is not stored.
 
 ## Test
 

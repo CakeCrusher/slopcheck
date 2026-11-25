@@ -1,0 +1,64 @@
+{
+  "manifest_version": "0.2",
+  "name": "slopcheck",
+  "display_name": "SlopCheck",
+  "version": "0.1.1",
+  "description": "Check a draft X (Twitter) post for slop before it is posted. Free, no API key.",
+  "long_description": "SlopCheck scores a post from 0 to 100 for how much it reads like the posts people call out as slop: engagement bait, filler, formula. 50 or more reads as slop. It is not an AI detector: it says how a post reads, not who or what wrote it. Without a key the server uses SlopCheck's free API (50 checks a day per IP address). The post text is sent to slopcheck.io to be scored.",
+  "author": {
+    "name": "SlopCheck",
+    "url": "https://slopcheck.io"
+  },
+  "homepage": "https://slopcheck.io/developers",
+  "documentation": "https://slopcheck.io/developers",
+  "license": "MIT",
+  "server": {
+    "type": "node",
+    "entry_point": "index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/index.js"
+      ],
+      "env": {
+        "SLOPCHECK_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "SlopCheck Premium API key (optional)",
+      "description": "Leave empty to use the free API. With a Premium key (slopcheck.io/developers) the get_feedback tool appears.",
+      "sensitive": true,
+      "required": false
+    }
+  },
+  "tools": [
+    {
+      "name": "check_post",
+      "description": "Score one draft X post for slop, from 0 to 100"
+    },
+    {
+      "name": "check_posts",
+      "description": "Score up to 20 drafts in one call, in order"
+    }
+  ],
+  "keywords": [
+    "slop",
+    "x",
+    "twitter",
+    "social media",
+    "writing"
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

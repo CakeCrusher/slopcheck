@@ -1,16 +1,20 @@
 #!/usr/bin/env node
 // SlopCheck MCP server (stdio, no dependencies). Tools: check_post, check_posts, and get_feedback when SLOPCHECK_API_KEY is set.
-// Without a key it uses the free check at slopcheck.io (a daily limit per IP applies). With a Premium key it uses the API.
+// Without a key it uses SlopCheck's free API (50 checks a day per IP address). With a Premium key it uses that key's allowance.
 import { createInterface } from "node:readline";
 
 const BASE = process.env.SLOPCHECK_URL || "https://slopcheck.io";
-const KEY = process.env.SLOPCHECK_API_KEY || "";
-const VERSION = "0.1.0";
+// A client that starts the server from a bundle passes the optional key as a setting; one that leaves it unset may hand over the
+// placeholder itself ("${user_config.api_key}"), which is no key.
+const RAW_KEY = (process.env.SLOPCHECK_API_KEY || "").trim();
+const KEY = RAW_KEY.startsWith("${") ? "" : RAW_KEY;
+const VERSION = "0.1.1";
 const MAX_BATCH = 20;
 
 async function check(text, feedback = false) {
   const keyed = Boolean(KEY);
-  const res = await fetch(`${BASE}${keyed ? "/api/v1/check" : "/api/check"}`, {
+  // One endpoint for both: the public API. (Until 0.1.0 a call without a key went to the website's own check, which has a different limit.)
+  const res = await fetch(`${BASE}/api/v1/check`, {
     method: "POST",
     headers: { "Content-Type": "application/json", "User-Agent": `slopcheck-mcp/${VERSION}`, ...(keyed ? { Authorization: `Bearer ${KEY}` } : {}) },
     body: JSON.stringify(keyed ? { text, feedback } : { text }),

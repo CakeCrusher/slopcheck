@@ -31,6 +31,9 @@ what is left. The full reference is at [slopcheck.io/developers](https://slopche
 claude mcp add slopcheck -- npx -y github:CakeCrusher/slopcheck
 ```
 
+For clients that install bundles (Claude Desktop): download `slopcheck.mcpb` from the
+[latest release](https://github.com/CakeCrusher/slopcheck/releases/latest) and open it.
+
 **Agent skill** ([`plugins/slopcheck`](plugins/slopcheck)): the same check as a skill, with no server to run. In Claude Code:
 
 ```

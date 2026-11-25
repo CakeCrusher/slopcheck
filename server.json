@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.CakeCrusher/slopcheck",
+  "title": "SlopCheck",
+  "description": "Check a draft X (Twitter) post for slop before posting it. Free, no API key.",
+  "version": "0.1.1",
+  "websiteUrl": "https://slopcheck.io/developers",
+  "repository": {
+    "url": "https://github.com/CakeCrusher/slopcheck",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/CakeCrusher/slopcheck/releases/download/v0.1.1/slopcheck.mcpb",
+      "fileSha256": "3c38d5f1849e486c7342fbdfde950acfb130a6ddd12b4ca025edcbee4c2eac7e",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
