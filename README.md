@@ -34,6 +34,10 @@ claude mcp add slopcheck -- npx -y github:CakeCrusher/slopcheck
 For clients that install bundles (Claude Desktop): download `slopcheck.mcpb` from the
 [latest release](https://github.com/CakeCrusher/slopcheck/releases/latest) and open it.
 
+Listed in the official MCP Registry as `io.github.CakeCrusher/slopcheck`, and on Glama:
+
+[![slopcheck MCP server](https://glama.ai/mcp/servers/CakeCrusher/slopcheck/badges/score.svg)](https://glama.ai/mcp/servers/CakeCrusher/slopcheck)
+
 **Agent skill** ([`plugins/slopcheck`](plugins/slopcheck)): the same check as a skill, with no server to run. In Claude Code:
 
 ```
